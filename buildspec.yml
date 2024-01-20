@@ -1,0 +1,17 @@
+version 0.2
+
+
+phases:
+    install:
+        commands:
+            - curl -o https://medium.com/@anna.jeanette.b/how-to-create-a-ci-cd-pipeline-for-amazon-ecs-with-jenkins-and-docker-ba6a016683a1
+            - unzip packer.zip
+            - sudo mv packer /usr/local/bin
+     
+       build:
+        commands:
+            - packer init . 
+            - packer build .
+    artifacts:
+        files:
+          - '*'  
